@@ -1,0 +1,43 @@
+version: '3'
+services:
+  discoveryserver:
+    image: com.looseboxes/discoveryserver:1.0-SNAPSHOT
+    ports:
+      - 8761:8761
+########################################################################      
+# https://developer.okta.com/blog/2019/02/28/spring-microservices-docker      
+#  configserver:
+#    image: com.looseboxes/configserver:1.0-SNAPSHOT
+#    volumes:
+#      - ./config-data:/var/config-data
+#    environment:
+#      - JAVA_OPTS=
+#         -DEUREKA_URL=http://discoveryserver:8761/eureka
+#         -Dspring.cloud.config.server.native.searchLocations=/var/config-data
+#    depends_on:
+#      - discoveryserver
+#    ports:
+#      - 8888:8888
+##########################################################################
+  bcsafecontentservice:
+    image: com.looseboxes/bcsafecontentservice:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_URL=http://discoveryserver:8761/eureka
+    restart: on-failure
+    depends_on:
+      - discoveryserver
+#      - configservice
+    ports:
+      - 8093:8093
+  cometdchatservice:
+    image: com.looseboxes/cometdchatservice:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_URL=http://discoveryserver:8761/eureka
+    depends_on:
+      - discoveryserver
+#      - configservice
+      - bcsafecontentservice  
+    ports:
+      - 8092:8092
