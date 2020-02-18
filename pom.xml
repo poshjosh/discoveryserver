@@ -17,6 +17,9 @@
     <name>${project.artifactId}</name>
     <description>Registration/Discovery server for various microservices</description>
 
+    <properties>
+        <app.port>8761</app.port>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -34,8 +37,4 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
 </project>
