@@ -4,7 +4,8 @@ services:
     image: com.looseboxes/discoveryserver:1.0-SNAPSHOT
     ports:
       - 8761:8761
-########################################################################      
+######################################################################## 
+# OTHER https://dzone.com/articles/the-future-of-spring-cloud-microservices-after-net
 # https://developer.okta.com/blog/2019/02/28/spring-microservices-docker      
 #  configserver:
 #    image: com.looseboxes/configserver:1.0-SNAPSHOT
