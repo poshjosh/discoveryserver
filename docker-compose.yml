@@ -1,7 +1,7 @@
 version: '3'
 services:
   discoveryserver:
-    image: com.looseboxes/discoveryserver:1.0
+    image: com.looseboxes/discoveryserver:1.0-SNAPSHOT
     ports:
       - 8761:8761
 ######################################################################## 
@@ -21,7 +21,7 @@ services:
 #      - 8888:8888
 ##########################################################################
   bcsafecontentservice:
-    image: com.looseboxes/bcsafecontentservice:1.0
+    image: com.looseboxes/bcsafecontentservice:1.0-SNAPSHOT
     environment:
       - JAVA_OPTS=
         -DEUREKA_URL=http://discoveryserver:8761/eureka
@@ -32,7 +32,7 @@ services:
     ports:
       - 8093:8093
   cometdchatservice:
-    image: com.looseboxes/cometdchatservice:1.0
+    image: com.looseboxes/cometdchatservice:1.1-SNAPSHOT
     environment:
       - JAVA_OPTS=
         -DEUREKA_URL=http://discoveryserver:8761/eureka
