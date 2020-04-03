@@ -16,5 +16,5 @@ library(
 completePipeline(
         appPort : '8761',
         appEndpoint : '/actuator/health',
-        mainClass : 'com.looseboxes.registrationserver.ServiceRegistrationServer'
+        mainClass : 'com.looseboxes.discoveryserver.ServiceRegistrationServer'
 )

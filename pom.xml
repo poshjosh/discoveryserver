@@ -31,7 +31,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>    
-                    <mainClass>com.looseboxes.registrationserver.ServiceRegistrationServer</mainClass>
+                    <mainClass>com.looseboxes.discoveryserver.ServiceRegistrationServer</mainClass>
                 </configuration>
             </plugin>
         </plugins>
