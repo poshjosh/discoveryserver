@@ -13,7 +13,7 @@ library(
     )
 )
 
-completePipeline(
+pipelineForJavaSprintBoot(
         appPort : '8761',
         appEndpoint : '/actuator/health',
         mainClass : 'com.looseboxes.discoveryserver.ServiceRegistrationServer'
